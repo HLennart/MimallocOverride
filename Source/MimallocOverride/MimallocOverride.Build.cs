@@ -11,13 +11,10 @@ public class MimallocOverride : ModuleRules
 
 				
 		if (Target.Platform == UnrealTargetPlatform.Win64) {
-			// PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-override.dll"));
-			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-redirect.dll"));
 			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-redirect.lib"));
 			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc.lib"));
 			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-override.lib"));
-			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-redirect.dll"));
-		
+			
 			RuntimeDependencies.Add("$(TargetOutputDir)/mimalloc-override.dll", Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-override.dll"));
 			RuntimeDependencies.Add("$(TargetOutputDir)/mimalloc-redirect.dll", Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc-redirect.dll"));
 			RuntimeDependencies.Add("$(TargetOutputDir)/mimalloc.dll", Path.Combine(ModuleDirectory, "lib", "Win64", "mimalloc.dll"));
